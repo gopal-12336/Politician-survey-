@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Authentication
 const auth = firebase.auth();
-
+const db = firebase.firestore();
 // reCAPTCHA
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
     'recaptcha-container',
