@@ -1,31 +1,38 @@
+// Elements
 const sendOTPBtn = document.getElementById("sendOTP");
+const verifyOTPBtn = document.getElementById("verifyOTP");
 const otpSection = document.getElementById("otpSection");
-const mobileInput = document.getElementById("mobile");
 
+let confirmationResult = null;
+
+// Send OTP
 sendOTPBtn.addEventListener("click", function () {
 
-    const mobile = mobileInput.value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
 
     if (mobile.length !== 10 || isNaN(mobile)) {
-        alert("Please enter a valid 10-digit mobile number.");
+        alert("Enter valid 10 digit mobile number");
         return;
     }
 
-    alert("Mobile number verified.\nFirebase OTP integration will be added in the next step.");
+    mobile = "+91" + mobile;
 
-    otpSection.style.display = "block";
+    auth.signInWithPhoneNumber(mobile, window.recaptchaVerifier)
 
-});
+    .then(function(result){
 
-document.getElementById("verifyOTP").addEventListener("click", function () {
+        confirmationResult = result;
 
-    const otp = document.getElementById("otp").value.trim();
+        otpSection.style.display = "block";
 
-    if (otp.length < 6) {
-        alert("Enter a valid OTP.");
-        return;
-    }
+        alert("OTP Sent Successfully");
 
-    alert("OTP verified successfully (Demo)");
+    })
+
+    .catch(function(error){
+
+        alert(error.message);
+
+    });
 
 });
