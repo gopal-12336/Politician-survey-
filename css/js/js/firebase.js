@@ -23,3 +23,4 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
 );
 
 recaptchaVerifier.render();
+document.getElementById("testMessage").innerHTML = "Firebase Loaded Successfully";
