@@ -36,3 +36,38 @@ sendOTPBtn.addEventListener("click", function () {
     });
 
 });
+
+// Verify OTP
+verifyOTPBtn.addEventListener("click", function () {
+
+    let otp = document.getElementById("otp").value.trim();
+
+    if (otp.length != 6) {
+        alert("Enter valid OTP");
+        return;
+    }
+
+    confirmationResult.confirm(otp)
+
+    .then(function(result){
+
+        const user = result.user;
+
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("userPhone", user.phoneNumber);
+
+        alert("Login Successful");
+
+        // Abhi test ke liye
+        // Baad me survey.html par redirect karenge
+        window.location.href = "survey.html";
+
+    })
+
+    .catch(function(error){
+
+        alert("Wrong OTP");
+
+    });
+
+});
