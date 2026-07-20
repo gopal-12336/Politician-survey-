@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Political Survey System</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="top-bar">
+<h2>Political Survey</h2>
+
+<select id="language">
+<option>English</option>
+<option>हिन्दी</option>
+</select>
+
+</div>
+
+<div class="logo">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="100">
+
+</div>
+
+<h1>Welcome</h1>
+
+<p>Election Survey Management System</p>
+
+<input
+type="text"
+id="mobile"
+placeholder="Enter Mobile Number"
+maxlength="10">
+
+<div id="recaptcha-container"></div>
+
+<button id="sendOTP">
+Send OTP
+</button>
+
+<div id="otpSection" style="display:none;">
+
+<input
+type="text"
+id="otp"
+placeholder="Enter OTP">
+
+<button id="verifyOTP">
+Verify OTP
+</button>
+
+</div>
+
+<p class="footer">
+
+Powered by Political Survey System
+
+</p>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
