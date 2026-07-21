@@ -30,7 +30,7 @@ sendOTPBtn.addEventListener("click", function () {
 
     })
 
-    ..catch(function(error){
+    .catch(function(error){
 
     console.log(error);
     alert("Error Code: " + error.code + "\n\nMessage: " + error.message);
