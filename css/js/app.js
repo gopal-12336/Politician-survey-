@@ -1,4 +1,6 @@
+// App JS Loaded
 alert("App JS Loaded");
+
 // Elements
 const sendOTPBtn = document.getElementById("sendOTP");
 const verifyOTPBtn = document.getElementById("verifyOTP");
@@ -8,7 +10,9 @@ let confirmationResult = null;
 
 // Send OTP
 sendOTPBtn.addEventListener("click", function () {
-  alert("Send OTP button clicked");
+
+    alert("Send OTP button clicked");
+
     let mobile = document.getElementById("mobile").value.trim();
 
     if (mobile.length !== 10 || isNaN(mobile)) {
@@ -20,7 +24,7 @@ sendOTPBtn.addEventListener("click", function () {
 
     auth.signInWithPhoneNumber(mobile, window.recaptchaVerifier)
 
-    .then(function(result){
+    .then(function(result) {
 
         confirmationResult = result;
 
@@ -30,12 +34,11 @@ sendOTPBtn.addEventListener("click", function () {
 
     })
 
-    .catch(function(error){
+    .catch(function(error) {
 
-    console.log(error);
-    alert("Error Code: " + error.code + "\n\nMessage: " + error.message);
+        console.log(error);
 
-});
+        alert("Error Code: " + error.code + "\n\nMessage: " + error.message);
 
     });
 
@@ -46,14 +49,14 @@ verifyOTPBtn.addEventListener("click", function () {
 
     let otp = document.getElementById("otp").value.trim();
 
-    if (otp.length != 6) {
+    if (otp.length !== 6) {
         alert("Enter valid OTP");
         return;
     }
 
     confirmationResult.confirm(otp)
 
-    .then(function(result){
+    .then(function(result) {
 
         const user = result.user;
 
@@ -62,15 +65,13 @@ verifyOTPBtn.addEventListener("click", function () {
 
         alert("Login Successful");
 
-        // Abhi test ke liye
-        // Baad me survey.html par redirect karenge
         window.location.href = "survey.html";
 
     })
 
-    .catch(function(error){
+    .catch(function(error) {
 
-        alert("Wrong OTP");
+        alert("Wrong OTP\n\n" + error.message);
 
     });
 
