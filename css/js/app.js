@@ -65,7 +65,7 @@ verifyOTPBtn.addEventListener("click", function () {
 
         alert("Login Successful");
 
-        window.location.href = "survey.html";
+        window.location.href = "css/js/survey.html";
 
     })
 
