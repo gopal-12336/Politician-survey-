@@ -1,3 +1,4 @@
+alert("App JS Loaded");
 // Elements
 const sendOTPBtn = document.getElementById("sendOTP");
 const verifyOTPBtn = document.getElementById("verifyOTP");
