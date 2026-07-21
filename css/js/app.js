@@ -7,7 +7,7 @@ let confirmationResult = null;
 
 // Send OTP
 sendOTPBtn.addEventListener("click", function () {
-
+  alert("Send OTP button clicked");
     let mobile = document.getElementById("mobile").value.trim();
 
     if (mobile.length !== 10 || isNaN(mobile)) {
