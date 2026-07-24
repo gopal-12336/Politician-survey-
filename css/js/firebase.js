@@ -14,13 +14,21 @@ firebase.initializeApp(firebaseConfig);
 // Authentication
 const auth = firebase.auth();
 const db = firebase.firestore();
-// reCAPTCHA
-window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    'recaptcha-container',
-    {
-        size: 'normal'
-    }
-);
 
-recaptchaVerifier.render();
-document.getElementById("testMessage").innerHTML = "Firebase Loaded Successfully";
+// Sirf login page par reCAPTCHA banega
+if (document.getElementById("recaptcha-container")) {
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        'recaptcha-container',
+        {
+            size: 'normal'
+        }
+    );
+
+    recaptchaVerifier.render();
+}
+
+// Sirf login page par test message dikhana
+if (document.getElementById("testMessage")) {
+    document.getElementById("testMessage").innerHTML = "Firebase Loaded Successfully";
+}
