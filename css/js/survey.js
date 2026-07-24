@@ -1,4 +1,5 @@
 // Firestore
+alert("Survey JS Loaded");
 const db = firebase.firestore();
 
 // Submit Button
