@@ -4,7 +4,7 @@ const db = firebase.firestore();
 
 // Submit Button
 document.getElementById("submitSurvey").addEventListener("click", function () {
-
+alert("Submit Button Clicked");
     let name = document.getElementById("name").value.trim();
     let age = document.getElementById("age").value.trim();
     let gender = document.getElementById("gender").value;
