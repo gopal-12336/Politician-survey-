@@ -1,6 +1,5 @@
 // Firestore
 alert("Survey JS Loaded");
-const db = firebase.firestore();
 
 // Submit Button
 document.getElementById("submitSurvey").addEventListener("click", function () {
